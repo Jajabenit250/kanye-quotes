@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RandomFiveController;
+use App\Http\Controllers\RandomQuotesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,7 @@ use App\Http\Controllers\RandomFiveController;
 |
 */
 
-Route::group(['prefix' => '/quote'], function () {
-    Route::get('/random-five', [RandomFiveController::class, 'getQuotes']);
-});
+Route::get('/quote/random/{key}', [RandomQuotesController::class, 'quotesApi']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

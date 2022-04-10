@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RandomFiveController;
+use App\Http\Controllers\RandomQuotesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,8 @@ use App\Http\Controllers\RandomFiveController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/random-five', [RandomFiveController::class, 'getQuotes']);
+Route::get('/', [RandomQuotesController::class, 'quotesView']);

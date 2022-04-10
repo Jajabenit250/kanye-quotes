@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Quotes</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
@@ -22,13 +24,34 @@
     </head>
     <body class="antialiased">
         <div class="features">
-            <ul>
-                @foreach($quotes as $quote)
-                  <li>
-                     {!! $quote !!}
-                  </li>
-                @endforeach
-            </ul>
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1>Kanye West Random Quotes</h1>
+                    <p><a class="btn btn-primary" href="/">Refresh</a></p>
+                </div>
+            </section>
+            
+                <div >
+                    <div class="row" style="margin-left : 120px; margin-top: 50px;">
+                        @foreach($quotes as $quote)
+                            <div class="col-sm-2">
+                                <div class="card mb-3 h-100">
+                                    <div class="card-body">
+                                       <center> 
+                                          
+                                           <h4 class="card-text">
+                                             {!! $quote !!}<br />
+                                           </h4> 
+                                        </center>
+                                        
+                                    </div>
+                                    <h5 class="card-title"> ~~ Kanye West</h5>
+                                </div>                               
+                            </div>
+                        @endforeach                        
+                    </div>
+                </div>
+            
        </div>
     </body>
 </html>
